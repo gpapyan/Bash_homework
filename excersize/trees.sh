@@ -2,7 +2,7 @@
 
 
 
-trapi() {
+trees() {
 
 cols=`tput cols`
 start=$((cols/2))
@@ -19,7 +19,6 @@ deco2=$((RANDOM % rows))
 cols=$((start-i-$2))
 tput cup $i $cols
 
-#printf "$char" 
 for((j=0;j<=(i+$2);j++))
 do
 
@@ -57,10 +56,7 @@ echo""
 triangle() {
 cols=`tput cols`
 start=$((cols/2))
-#echo "How many rows do you want"
-#read rows
-#echo "What character do you want to use"
-#read char
+
 
 rows=5
 # char="*"
@@ -72,7 +68,7 @@ do
 cols=$((start-i))
 tput cup $i $cols
 deco=$(($RANDOM%rows))
-#printf "$char" 
+
 for((j=0;j<=i;j++))
 do
 
@@ -102,7 +98,7 @@ fi
 done
 done
 echo""
-# sleep 5 
+
 }
 
  
@@ -114,13 +110,13 @@ start=$((cols/2))
 rows=5
 char="$2"
 
-# tput clear
+
 for((i=0;i<5;i++))
 do 
 cols=$((start-i-2))
 tput cup $(($1+i)) $cols
 
-#printf "$char" 
+
 for((j=0;j<=(i+2);j++))
 do
 
@@ -157,7 +153,7 @@ read ch_deco2
 echo "Enter character for base" 
 read base_char
 triangle "$char" "$ch_deco1"
-trapi 5 1 "$char" "$ch_deco1" "$ch_deco2"
-trapi 10 2 "$char" "$ch_deco1" "$ch_deco2"
-trapi 15 3 "$char" "$ch_deco1" "$ch_deco2"
+trees 5 1 "$char" "$ch_deco1" "$ch_deco2"
+trees 10 2 "$char" "$ch_deco1" "$ch_deco2"
+trees 15 3 "$char" "$ch_deco1" "$ch_deco2"
 base 20 "$base_char"
